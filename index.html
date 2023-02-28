@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">   
+    <title>Mon carnet de lecture</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Mon carnet de lecture</h1>
+        <div id="separator">
+            <div class="horizontal-line"></div>
+        </div>
+    </div>
+    <div id="paragraphe-présentation" class="main-content">
+        <div class="pre-p">
+            <h2>Présentation :</h2>
+            <p>Bienvenue dans ce carnet de lecture crée par Youssef Aidi élève de 2°5 où sera noter les références à connaitre tel que les auteurs et leurs oeuvres pour avoir un bon bagage au BAC</p>
+        </div>
+        <div id="Zola-présentation">
+                <img src="img-auteur.png">
+        </div>
+    </div>
+    <div id="button-déroulant">
+        <div class="fleche-bas"></div> 
+    </div>
+    <div class="box-menu1">
+        <div class="box-1"></div>
+        <div class="box-2"></div>
+    </div>
+    <div class="frise-chrono1">
+        <ul>
+            <li>
+                <a id="menu1" href="Romantisme.pdf">Le Romantisme</a>
+                <p id="date1">1820</p>
+                <p id="date2">1850</p>
+            </li>
+            <li>
+                <a id="menu2" href="Réalisme.pdf">Le Réalisme</a>
+                <p id="date3">1890</p>
+            </li>
+            <li>
+                <div class="bloc-frise">
+                    <a id="menu3" href="Naturalisme.pdf">Le Naturalisme</a>
+                    <div id="fleche-frise1"></div>
+                </div>
+                <p id="date4">1900</p>
+            </li>
+        </ul>
+    </div>
+    <div class="frise-chrono2">
+        <ul>
+            <li>
+                <a id="menu4" href="Surréalisme.pdf">Le Surréalisme</a>
+                <p id="date1">1920</p>
+                <p id="date2">1950</p>
+            </li>
+            <li>
+                <a id="menu5" href="existentialisme.pdf">L'existentialisme</a>
+                <p id="date3">1960</p>
+            </li>
+            <li>
+                <div class="bloc-frise">
+                    <a id="menu6" href="NouveauRoman.pdf">Nouveau roman</a>
+                    <div id="fleche-frise2"></div>
+                </div>
+                <p id="date4">2000+</p>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <p>Copyright &copy; 2023 Mon Carnet de lecture</p>
+        </div>
+    </div>
+
+    <button id="btn1" class="scroll-btn"></button>
+    <button id="btn2" class="scroll-btn"></button>
+    <button id="btn3" class="scroll-btn"></button>
+
+<script>
+    var scrollSpeed = 5; 
+  
+    function scrollToPixels(pixels, duration) {
+      var start = window.scrollY;
+      var end = start + pixels;
+      var startTime = null;
+      function step(time) {
+        if (startTime === null) {
+          startTime = time;
+        }
+        var progress = time - startTime;
+        var percent = Math.min(progress / duration, 1);
+        window.scrollTo(0, start + (end - start) * percent);
+        if (progress < duration) {
+          window.requestAnimationFrame(step);
+        }
+      }
+      window.requestAnimationFrame(step);
+    }
+  
+    document.getElementById('btn1').addEventListener('click', function() {
+      scrollToPixels(200, 5000 / scrollSpeed);
+    });
+  
+    document.getElementById('btn2').addEventListener('click', function() {
+      scrollToPixels(400, 5000 / scrollSpeed);
+    });
+  
+    document.getElementById('btn3').addEventListener('click', function() {
+      scrollToPixels(600, 5000 / scrollSpeed);
+    });
+</script>
+</div>
+</body>
+</html>
